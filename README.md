@@ -8,7 +8,7 @@ Step into a warm 3D library, pick a cat companion, take a book off the shelf, an
 
 <br>
 
-**[ ADD YOUR LIVE LINK HERE ]**
+[**Visit Vaelore →**](https://vae-lore.vercel.app/)
 
 <!-- Replace the line above with: [**Visit Vaelore →**](https://your-site.vercel.app) -->
 
