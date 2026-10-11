@@ -198,6 +198,6 @@ Yes — the reader switches to a single-page layout.
 
 Built entirely by voice with [Wispr Flow](https://wisprflow.ai)
 
-Author: `[ ADD YOUR NAME AND LINKS ]` · License: `[ ADD YOUR LICENSE ]`
+Author: `Sanskriti Shukla`
 
 </div>
