@@ -143,24 +143,6 @@ While the dev server is running, a book is fetched the first time you open it. T
 
 ---
 
-## Deploy on Vercel
-
-Vaelore deploys to [Vercel](https://vercel.com) in a few minutes.
-
-1. **Push** this project to a GitHub repository.
-2. In Vercel, choose **Add New → Project** and import the repository. Vercel detects Vite automatically.
-3. Under **Environment Variables**, add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
-4. Click **Deploy**.
-5. In Supabase, go to **Authentication → URL Configuration** and add your Vercel address as the **Site URL** and a redirect URL.
-6. Check that books load by opening `https://YOUR-SITE/api/book?id=1342` — you should see the text of *Pride and Prejudice*.
-7. Add your live link at the top of this README.
-
-The `api/book.js` function ships with the project, so books load on demand with nothing extra to configure.
-
-**Live site:** `[ ADD YOUR LIVE LINK HERE ]`
-
----
-
 ## Good to know
 
 - **Which books open?** Any book in the catalog that has a Project Gutenberg number. Titles added only as records during sign-up (from Open Library search) can't be opened — add books to your shelf from **Find a book**.
