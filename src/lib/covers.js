@@ -1,0 +1,5 @@
+const K='v_covers',mem=(()=>{try{return JSON.parse(localStorage.getItem(K))||{}}catch{return{}}})(),save=()=>{try{localStorage.setItem(K,JSON.stringify(mem))}catch{}};let chain=Promise.resolve();
+const url=id=>id?`https://covers.openlibrary.org/b/id/${id}-L.jpg`:null;
+export const coverUrl=b=>{if(b.cover)return Promise.resolve(url(b.cover));const k=String(b.id);if(k in mem)return Promise.resolve(url(mem[k]));
+ const job=chain.then(async()=>{try{const q=encodeURIComponent(b.t.replace(/[:;(].*$/,'')+' '+(b.a||'').split(' ').pop());const j=await (await fetch(`https://openlibrary.org/search.json?limit=1&fields=cover_i&q=${q}`)).json();const id=j.docs?.[0]?.cover_i||0;mem[k]=id;save();await new Promise(r=>setTimeout(r,250));return url(id)}catch{return null}});chain=job.catch(()=>{});return job};
+export const avgColor=img=>{try{const c=document.createElement('canvas');c.width=c.height=8;const g=c.getContext('2d');g.drawImage(img,0,0,8,8);const d=g.getImageData(0,0,8,8).data;let r=0,gg=0,b=0;for(let i=0;i<d.length;i+=4){r+=d[i];gg+=d[i+1];b+=d[i+2]}const n=d.length/4;return `rgb(${r/n*.8|0},${gg/n*.8|0},${b/n*.8|0})`}catch{return null}};
